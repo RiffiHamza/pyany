@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+  {% block nav_foot_bar %}
+ <!-- ***** Dento Pricing Table Area Start ***** -->
+  <section class="dento-pricing-table-area mt-50 section-padding-0-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="dento-price-table table-responsive">
+            <table class="table table-borderless mb-0">
+              <thead>
+                <tr>
+                  <th scope="col">Doctor Name</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">Despo A</th>
+                  <th scope="col">Despo de</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+              
+               {% for items in avb %}
+              <tr>
+                  <th scope="row">{{items.Doctor_ID.Last_Name}} {{items.Doctor_ID.First_Name}}</th>
+                  <td>{{items.Date}}</td>
+                  <td>{{items.Avail_From}}</td>
+                  <td>{{items.Avail_To}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="col-12">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ***** Dento Pricing Table Area End ***** -->
+  <!-- Book An Oppointment Area Start -->
+  <section class="book-an-oppointment-area section-padding-100 bg-img bg-gradient-overlay jarallax clearfix" style="background-image: url({% static 'design_control/img/bg-img/12.jpg' %});">
+    <div class="container">
+      <div class="row">
+        <!-- Section Heading -->
+        <div class="col-12">
+          <div class="section-heading text-center white">
+            <h2>Book An Apointment</h2>
+            <div class="line"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <!-- Appointment Form -->
+          <div class="appointment-form">
+            <form action="#" method="post">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group mb-30">
+                    <input type="text" name="your-name" class="form-control" placeholder="Your Name" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-30">
+                    <input type="text" name="your-phone" class="form-control" placeholder="Your Phone" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-30">
+                    <input type="email" name="your-email" class="form-control" placeholder="Your Email" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-30">
+                    <input type="text" name="your-address" class="form-control" placeholder="Your Address">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group mb-30">
+                    <select name="your-scheldule" class="form-control">
+                      <option value="Choose Your Scheldule">Choose Your Scheldule</option>
+                      <option value="8 PM to 10 PM">8 PM to 10 PM</option>
+                      {% for items in avb %}
+                      <option value="{{items.Avail_From}}">{{items.Date}} : {{items.Avail_From}}</option>
+                      
+                      {% endfor %}
+                    </select>
+                  </div>
+                </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group mb-30">
+                    <textarea name="your-message" class="form-control" placeholder="Your Message"></textarea>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn dento-btn">GET IT Now</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> <br>
+
+  <!-- Book An Oppointment Area End -->
+{% endblock nav_foot_bar %}
