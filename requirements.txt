@@ -1,7 +1,7 @@
 asgiref==3.2.7
 certifi==2020.4.5.1
 chardet==3.0.4
-Django==3.0.5
+Django==3.0.7
 django-3-jet @ https://github.com/Barukimang/django-jet/archive/dev.zip
 django-suit==0.2.28
 feedparser==5.2.1
